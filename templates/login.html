@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+</head>
+<body>
+    <h4>这里是登录页面</h4>
+    <hr />
+    <div>
+        <form action="/login/" method="post">
+            <div>
+                <input type="hidden" name="csrf_token" value="{{ gen_token() }}" />
+{#                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />#}
+            </div>
+            <div>
+                {{ form.email.label }}:{{ form.email() }}&nbsp;{{ email }}
+            </div>
+            <div>
+                {{ form.password.label }}:{{ form.password() }}&nbsp;{{ password }}
+            </div>
+            <div>
+                {{ form.remenber.label }}:{{ form.remenber() }}
+            </div>
+            <div>
+                <input type="hidden" name="next" value="{{ next }}" />
+            </div>
+            <div>
+                <button type="submit">登录</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

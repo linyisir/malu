@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <style>
+        #header {
+            height:50px;
+            width: 80%;
+            margin: 0 auto;
+            background-color: skyblue;
+
+            font-size: 24px;
+            line-height: 50px;
+        }
+        #title {
+            float: left;
+            padding-left: 20px;
+
+        }
+        #info {
+            float: right;
+            padding-right: 20px;
+        }
+
+        #content {
+            height:50px;
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div id="title">
+            庠序科技
+        </div>
+        <div id="info">
+            {% if username %}
+                欢迎&nbsp;{{ username }}&nbsp;<a href="/logout/">注销</a>
+                {% else %}
+                <a href="/login/">登录</a>&nbsp;|&nbsp;<a href="/regist/">注册</a>
+            {% endif %}
+        </div>
+    </div>
+    <div id="content">
+        <h4><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>Do not aim fro your success if you really want it. Just stick to do what you love and believe in.</h4>
+    </div>
+
+</body>
+</html>
